@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
     background-color: darkblue;
 }
@@ -12,6 +17,17 @@ header{
     line-height: 70px;
     background-color: white;
 }
+#start-btn{
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #8c2f5c;
+}
+
 #grid{
 width: 700px;
 height: 700px;
@@ -21,14 +37,19 @@ flex-wrap: wrap;
 }
 #grid .cell{
     border: 1px solid white;
-    height: calc(100% /10);
-    width: calc(100% / 10 - 2px) ;
+    cursor: pointer;
 }
-/* 
+#grid .cell {
+    cursor: pointer;
+    height: calc(100% / 10);
+    width: calc(100% / 10);
+    border:1px solid white;
+
+}
 #grid .cell.clicked.odd{
 background-color: red;
 }
 #grid .cell.clicked.even{
     background-color: green;
-    } */
+}
 
