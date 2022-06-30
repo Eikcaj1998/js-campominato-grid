@@ -34,7 +34,13 @@ tra tre diversi livelli di difficoltà:
 - con difficoltà 3 => 49 caselle, con un numero compreso tra 1 e 49, divise in 7 
 caselle per 7 righe; */
 //function
-
+function createCell (content) {
+        
+    const cell = document.createElement('div')
+    cell.className = 'cell';
+    cell.innerText = content;
+    return cell;
+}
 //recupero elemento griglia
 const grid = document.getElementById('grid');
 const startBtn = document.getElementById('start-btn');
@@ -42,16 +48,21 @@ const startBtn = document.getElementById('start-btn');
 const rows = 10;
 const cells = 10;
 const totalCells = rows * cells 
-//premendo il bottone fa comparire il gioco
+//premendo il bottone fa comparir  e il gioco
 startBtn.addEventListener("click", function(){
-    generateCells()
+ generateCells() 
 });
+
 function generateCells() {
 //renderizzo 64 celle 
 for (let i = 0 ; i< totalCells; i++){
 //creo cella 
-const cell = document.createElement('div');
-cell.className = 'cell';
-grid.appendChild (cell)
+const newCell = createCell(i); 
+newCell.addEventListener('click',function(){
+    newCell.classList.toggle('active'); 
+})
+
+//aggancio la cella alla griglia
+grid.appendChild (newCell)
 }
 }

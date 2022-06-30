@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 body{
-    background-color: darkblue;
+    background-color: darkgrey;
 }
 /* utilities */
 .container{
@@ -28,6 +28,11 @@ header{
     background-color: #8c2f5c;
 }
 
+.active {
+    background-color: lightblue;
+    
+}
+
 #grid{
 width: 700px;
 height: 700px;
@@ -35,21 +40,16 @@ margin: 60px auto;
 display: flex;
 flex-wrap: wrap;
 }
-#grid .cell{
-    border: 1px solid white;
-    cursor: pointer;
-}
 #grid .cell {
     cursor: pointer;
     height: calc(100% / 10);
     width: calc(100% / 10);
     border:1px solid white;
+   display: flex;
+   color: black;
+   font-size: 25px;
+   align-items: center;
+   justify-content: center;
 
-}
-#grid .cell.clicked.odd{
-background-color: red;
-}
-#grid .cell.clicked.even{
-    background-color: green;
 }
 
