@@ -53,16 +53,17 @@ startBtn.addEventListener("click", function(){
  generateCells() 
 });
 
-function generateCells() {
+function generateCells(element) {
 //renderizzo 64 celle 
 for (let i = 0 ; i< totalCells; i++){
 //creo cella 
 const newCell = createCell(i); 
-newCell.addEventListener('click',function(){
-    newCell.classList.toggle('active'); 
+newCell.addEventListener('click', (event) => {
+event.target.classList.toggle('active'); 
+console.log('Hai cliccato la casella con il numero' + ' ' + newCell.innerHTML)
 })
 
-//aggancio la cella alla griglia
+//aggancio la cella alla griglia 
 grid.appendChild (newCell)
 }
 }
